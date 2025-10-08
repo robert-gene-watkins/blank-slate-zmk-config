@@ -24,21 +24,18 @@
 #define BT(n) BT_SEL n
 
 / {
+    chosen {
+       zmk,physical-layout =
+                       &layout_ortho_4x12_all1u;
+    };
+
 	conditional_layers {
 		compatible = "zmk,conditional-layers";
 		tri_layer {
 			if-layers = <2 3>;
 			then-layer = <4>;
-		}
+		};
 	};
-
-};
-
-/ {
-    chosen {
-       zmk,physical-layout =
-                       &layout_ortho_4x12_all1u;
-    };
 
     macros {
       ZMK_MACRO(thumbs_up,
