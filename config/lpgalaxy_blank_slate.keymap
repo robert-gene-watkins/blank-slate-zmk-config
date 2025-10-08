@@ -21,6 +21,7 @@
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 &mt { tapping_term_ms = <175>; flavor = "tap-preferred"; };
+&caps_word { continue-list = <SEMI COMMA DOT FSLH>; };
 
 #define BT(n) BT_SEL n
 
@@ -47,12 +48,14 @@
 	};
 
     macros {
-      ZMK_MACRO(thumbs_up,
-		wait-ms = <1>;
-		tap-ms = <5>;
-                bindings = <&kp PLUS &kp COLON &kp PLUS &kp N1 &kp COLON &kp RET>;
-		)
+		mscrl: mscrl {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+				= <&macro_press &kp CAPS>,<&macro_release &kp CAPS><&macro_press &kp LNLCK><&macro_release &kp LNLCK><&macro_press &kp CAPS>,<&macro_release &kp CAPS><&macro_press &kp LNLCK><&macro_release &kp LNLCK>;
+		};
     };
+
     /*
     tap_dances {
     	shifty: shift_caps_word {
@@ -73,7 +76,7 @@
  &kp TAB    &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp BKSP
  &mo RSE_L  &kp A      &mt LALT S &mt LSHFT D &mt LCTRL F    &kp G          &kp H            &mt RCTRL J    &mt RSHFT K &mt RALT L &mt LWIN SEMI &kp QUOT
  &mo LWR_L  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RET
- &mo FUN_L  &kp ESC    &kp GRAVE  &kp BSLH    &kp SPACE      &kp SPACE      &kp RET          &kp LEFT_BRACE &kp LEFT    &kp DOWN   &kp UP        &kp RIGHT
+ &mo FUN_L  &kp ESC    &trans     &kp GRAVE   &kp BSLH       &kp SPACE      &kp SPACE        &kp LEFT_BRACE &kp LEFT    &kp DOWN   &kp UP        &kp RIGHT
             >;
         };
 
@@ -102,11 +105,10 @@
 		lower_layer {
 			label = "Lower";
 			bindings = <
-	&trans &kp N1 &kp N2 &trans &trans &trans &trans &trans &trans &trans &trans &trans
-	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9     &kp N0          &trans
+	&trans &trans &trans &trans &trans &trans &trans &kp N4 &kp N5 &kp N6     &kp KP_DIVIDE   &trans
+	&trans &trans &trans &trans &trans &trans &trans &kp N1 &kp N2 &kp N3     &kp KP_EQUAL    &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans &kp N0 &kp KP_DOT &kp KP_MULTIPLY &trans
 			>;
 
 		};
