@@ -17,6 +17,7 @@
 #define RSE_L 2
 #define LWR_L 3
 #define ADJ_L 4
+#define MOU_L 5
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -106,9 +107,9 @@
 			label = "Lower";
 			bindings = <
 	&trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9     &kp N0          &trans
-	&trans &trans &trans &trans &trans &trans &trans &kp N4 &kp N5 &kp N6     &kp KP_DIVIDE   &trans
+	&trans &trans &trans &trans &trans &trans &trans &kp N4 &kp N5 &kp N6     &kp KP_PLUS     &trans
 	&trans &trans &trans &trans &trans &trans &trans &kp N1 &kp N2 &kp N3     &kp KP_EQUAL    &trans
-	&trans &trans &trans &trans &trans &trans &trans &trans &kp N0 &kp KP_DOT &kp KP_MULTIPLY &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans &kp N0 &kp KP_DOT &kp KP_MULTIPLY &KP_DIVIDE
 			>;
 
 		};
@@ -121,6 +122,18 @@
 	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+			>;
+
+		};
+
+		mouse_layer {
+			label = "Mouse";
+			bindings = <
+	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &mscrl &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 			>;
 
 		};
