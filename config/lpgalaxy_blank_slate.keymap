@@ -44,7 +44,7 @@
                 bindings = <&kp PLUS &kp COLON &kp PLUS &kp N1 &kp COLON &kp RET>;
 		)
     };
-    
+    /*
     tap_dances {
     	shifty: shift_caps_word {
 		compatible = "zmk,behavior-tap-dance";
@@ -54,7 +54,7 @@
 		bindings = <&kp LSHFT>, <&caps_word>;
 	};
     };
-
+*/
     keymap {
         compatible = "zmk,keymap";
 
