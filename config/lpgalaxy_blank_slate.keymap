@@ -42,7 +42,7 @@
 		compatible = "zmk,combos";
 		caps_word_combo {
 			bindings = <&caps_word>;
-			key-positions = <16 21>;
+			key-positions = <1 2>;
 		};
 	};
 
@@ -73,7 +73,7 @@
  &kp TAB    &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp BKSP
  &mo RSE_L  &kp A      &mt LALT S &mt LSHFT D &mt LCTRL F    &kp G          &kp H            &mt RCTRL J    &mt RSHFT K &mt RALT L &mt LWIN SEMI &kp QUOT
  &mo LWR_L  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RET
- &mo FUN_L  &kp ESC    &kp LGUI   &kp LALT    &kp SPACE      &kp SPACE      &kp RET          &kp LEFT_BRACE &kp LEFT    &kp DOWN   &kp UP        &kp RIGHT
+ &mo FUN_L  &kp ESC    &kp GRAVE  &kp BSLH    &kp SPACE      &kp SPACE      &kp RET          &kp LEFT_BRACE &kp LEFT    &kp DOWN   &kp UP        &kp RIGHT
             >;
         };
 
