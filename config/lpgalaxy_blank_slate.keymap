@@ -20,7 +20,7 @@
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
-&mt { tapping_term_ms = <1000>; };
+&mt { tapping_term_ms = <175>; flavor = "tap-preferred"; };
 
 #define BT(n) BT_SEL n
 
