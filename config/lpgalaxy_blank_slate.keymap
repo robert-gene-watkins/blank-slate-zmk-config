@@ -98,7 +98,6 @@
 	&trans    &trans   &trans &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
 	&trans    &trans   &trans &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
 	&trans    &trans   &trans &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
-	&trans    &trans   &trans &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
 			>;
 
 		};
@@ -121,7 +120,6 @@
 	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 			>;
 
 		};
@@ -129,7 +127,6 @@
 		mouse_layer {
 			label = "Mouse";
 			bindings = <
-	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans &trans &trans &mscrl &trans &trans &trans &trans &trans &trans &trans &trans
