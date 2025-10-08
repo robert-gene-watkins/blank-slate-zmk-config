@@ -12,12 +12,10 @@
 #define QWERTY_BASE 1
 
 #define TBLE_ORTHO   1
-// #define TBLE_MIT     1
-// #define TBLE_DUAL_2U 1
 
-#define NAV_L 1
-#define NUM_L 2
-#define SYM_L 3
+#define FUN_L 1
+#define RSE_L 2
+#define LWR_L 3
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -27,13 +25,7 @@
 / {
     chosen {
        zmk,physical-layout =
-#ifdef TBLE_DUAL_2U
-                       &layout_ortho_4x12_2x2u;
-#elif defined(TBLE_MIT)
-                       &layout_ortho_4x12_1x2u;
-#else
                        &layout_ortho_4x12_all1u;
-#endif
     };
 
     macros {
@@ -54,42 +46,53 @@
 	};
     };
 
-// Conditional layer only when we have less thumb keys
-#ifdef TBLE_DUAL_2U
-    cond_layers {
-        compatible = "zmk,conditional-layers";
-	tri {
-	    if-layers = <NUM_L NAV_L>;
-	    then-layer = <SYM_L>;
-        };
-    };
-#endif
-
     keymap {
         compatible = "zmk,keymap";
 
         base_layer {
-            label = "Base";
+            label = "QWERTY Base";
             bindings = <
-#ifdef QWERTY_BASE
- &kp ESC    &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp BKSP
- &kp TAB    &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &kp SEMI      &kp QUOT
- &kp LSHFT  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RET
-#else
- &kp ESC    &kp Q      &kp W      &kp F       &kp P          &kp B          &kp J            &kp L          &kp U       &kp Y      &kp QUOT      &kp BKSP
- &kp TAB    &kp A      &kp R      &kp S       &kp T          &kp G          &kp M            &kp N          &kp E       &kp I      &kp O         &kp QUOT
- &kp LSHFT  &kp Z      &kp X      &kp C       &kp D          &kp V          &kp K            &kp H          &kp COMMA   &kp DOT    &kp SEMI      &kp RET
-#endif
-#ifdef TBLE_DUAL_2U
- &kp LCTRL  &kp LGUI   &kp LALT   &mo NAV_L         &shifty                        &kp SPACE                &mo NUM_L   &kp LALT   &kp RGUI      &kp RSHIFT
-#elif defined(TBLE_MIT)
- &kp LCTRL  &mo SYM_L   &kp LGUI  &kp LALT    &mo NAV_L          &kp SPACE                   &mo NUM_L      &kp LEFT    &kp UP     &kp DOWN      &kp RIGHT
-#else
- &kp LCTRL  &mo SYM_L   &kp LGUI  &kp LALT    &mo NAV_L      &kp SPACE      &kp RET          &mo NUM_L      &kp LEFT    &kp UP     &kp DOWN      &kp RIGHT
-#endif
+ &kp TAB    &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp BKSP
+ &mo RSE_L  &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &kp SEMI      &kp QUOT
+ &mo LWR_L  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RET
+ &mo FUN_L  &mo SYM_L   &kp LGUI  &kp LALT    &mo NAV_L      &kp SPACE      &kp RET          &mo NUM_L      &kp LEFT    &kp UP     &kp DOWN      &kp RIGHT
             >;
         };
 
+		func_layer {
+			label = "FUNC";
+			bindings = <
+	&trans  &kp F1  &kp F2  &kp F3  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+	&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+	&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+	&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+			>;
+		}
+
+		raise_layer {
+			label = "RAISE";
+			bindings = <
+	&kp GRAVE &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+			>;
+
+		};
+
+		lower_layer {
+			label = "LOWER";
+			bindings = <
+	&trans &kp N1 &kp N2 &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+			>;
+
+		};
+/*
         nav_layer {
             label = "Nav";
             bindings = <
@@ -137,6 +140,7 @@
 #endif
             >;
         };
+*/
 
 
     };
