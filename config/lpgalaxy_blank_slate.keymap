@@ -38,6 +38,14 @@
 		};
 	};
 
+	combos {
+		compatible = "zmk,combos";
+		caps_word_combo {
+			bindings = <&caps_word>;
+			key-positions = <LEFT_SHIFT_POSITION RIGHT_SHIFT_POSITION>;
+		};
+	};
+
     macros {
       ZMK_MACRO(thumbs_up,
 		wait-ms = <1>;
