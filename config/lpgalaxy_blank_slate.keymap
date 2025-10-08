@@ -53,7 +53,7 @@
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
-				= <&macro_press &kp CAPS>,<&macro_release &kp CAPS>,<&macro_press &kp LNLCK>,<&macro_release &kp LNLCK>,<&macro_press &kp CAPS>,<&macro_release &kp CAPS>,<&macro_press &kp LNLCK>,<&macro_release &kp LNLCK>;
+				= <&macro_press &kp CAPS>,<&macro_release &kp CAPS>,<&macro_press &kp NLCK>,<&macro_release &kp NLCK>,<&macro_press &kp CAPS>,<&macro_release &kp CAPS>,<&macro_press &kp NLCK>,<&macro_release &kp NLCK>;
 		};
     };
 
@@ -108,7 +108,7 @@
 			bindings = <
 	&trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9     &kp N0          &trans
 	&trans &trans &trans &trans &trans &trans &trans &kp N4 &kp N5 &kp N6     &kp KP_PLUS     &trans
-	&trans &trans &trans &trans &trans &trans &trans &kp N1 &kp N2 &kp N3     &kp KP_EQUAL    &trans
+	&trans &trans &trans &trans &trans &trans &trans &kp N1 &kp N2 &kp N3     &kp EQUAL       &trans
 	&trans &trans &trans &trans &trans &trans &trans &trans &kp N0 &kp KP_DOT &kp KP_MULTIPLY &kp KP_DIVIDE
 			>;
 
