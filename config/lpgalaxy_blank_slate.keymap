@@ -16,11 +16,23 @@
 #define FUN_L 1
 #define RSE_L 2
 #define LWR_L 3
+#define ADJ_L 4
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 
 #define BT(n) BT_SEL n
+
+/ {
+	conditional_layers {
+		compatible = "zmk,conditional-layers";
+		tri_layer {
+			if-layers = <2 3>;
+			then-layer = <4>;
+		}
+	};
+
+};
 
 / {
     chosen {
@@ -53,42 +65,54 @@
             label = "QWERTY Base";
             bindings = <
  &kp TAB    &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp BKSP
- &mo RSE_L  &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &kp SEMI      &kp QUOT
+ &mo RSE_L  &kp A      &kp S      &mt LALT D  &mt LCTRL F    &kp G          &kp H            &mt RCTRL J    &kp RALT K  &kp L      &kp SEMI      &kp QUOT
  &mo LWR_L  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RET
  &mo FUN_L  &kp ESC    &kp LGUI  &kp LALT     &kp SPACE      &kp SPACE      &kp RET          &kp LEFT_BRACE &kp LEFT    &kp UP     &kp DOWN      &kp RIGHT
             >;
         };
 
 		func_layer {
-			label = "FUNC";
+			label = "Func";
 			bindings = <
-	&trans  &kp F1  &kp F2  &kp F3  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-	&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+	&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &trans
+	&trans  &kp F11 &kp F12 &kp F13 &kp F14 &kp F15 &kp F16 &kp F17 &kp F18 &kp F19 &kp F20 &trans
 	&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 	&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 			>;
 		};
 
 		raise_layer {
-			label = "RAISE";
+			label = "Raise";
 			bindings = <
-	&kp GRAVE &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-	&trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-	&trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-	&trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-	&trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp DEL
+	&trans    &trans   &trans &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
+	&trans    &trans   &trans &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
+	&trans    &trans   &trans &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
+	&trans    &trans   &trans &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
 			>;
 
 		};
 
 		lower_layer {
-			label = "LOWER";
+			label = "Lower";
 			bindings = <
 	&trans &kp N1 &kp N2 &trans &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+			>;
+
+		};
+
+		adjust_layer {
+			label = "Adjust";
+			bindings = <
+	&bootloader &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 			>;
 
 		};
