@@ -77,7 +77,7 @@
  &kp TAB    &kp Q       &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp BKSP
  &mo RSE_L  &lt MSE_L A &mt LALT S &mt LSHFT D &mt LCTRL F    &kp G          &kp H            &mt RCTRL J    &mt RSHFT K &mt RALT L &mt LWIN SEMI &lt RSE_L QUOT
  &mo LWR_L  &kp Z       &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &lt LWR_L RET
- &mo FUN_L  &kp ESC     &trans     &kp GRAVE   &kp BSLH       &kp SPACE      &kp SPACE        &kp LEFT_BRACE &kp LEFT    &kp DOWN   &kp UP        &kp RIGHT
+ &mo FUN_L  &kp ESC     &trans     &kp GRAVE   &kp BSLH       &kp SPACE      &kp SPACE        &kp LBKT       &kp LEFT    &kp DOWN   &kp UP        &kp RIGHT
             >;
         };
 
@@ -116,10 +116,10 @@
 		adjust_layer {
 			label = "Adjust";
 			bindings = <
-	&bootloader &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-	&trans      &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&bootloader &bt_sel 0 &bt_sel 1 &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans      &trans    &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans      &trans    &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&soft_off   &trans    &trans    &trans &trans &trans &trans &trans &trans &trans &trans &trans
 			>;
 
 		};
