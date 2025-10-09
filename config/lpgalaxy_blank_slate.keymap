@@ -22,7 +22,7 @@
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 &mt { tapping_term_ms = <175>; flavor = "tap-preferred"; };
-&caps_word { continue-list = <SEMI COMMA DOT FSLH>; };
+&caps_word { continue-list = <SEMI COMMA DOT FSLH S>; };
 
 #define BT(n) BT_SEL n
 
@@ -75,8 +75,8 @@
             label = "QWERTY Base";
             bindings = <
  &kp TAB    &kp Q       &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp BKSP
- &mo RSE_L  &lt MSE_L A &mt LALT S &mt LSHFT D &mt LCTRL F    &kp G          &kp H            &mt RCTRL J    &mt RSHFT K &mt RALT L &mt LWIN SEMI &kp QUOT
- &mo LWR_L  &kp Z       &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RET
+ &mo RSE_L  &lt MSE_L A &mt LALT S &mt LSHFT D &mt LCTRL F    &kp G          &kp H            &mt RCTRL J    &mt RSHFT K &mt RALT L &mt LWIN SEMI &lt RSE_L QUOT
+ &mo LWR_L  &kp Z       &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &lt LWR_L RET
  &mo FUN_L  &kp ESC     &trans     &kp GRAVE   &kp BSLH       &kp SPACE      &kp SPACE        &kp LEFT_BRACE &kp LEFT    &kp DOWN   &kp UP        &kp RIGHT
             >;
         };
@@ -94,10 +94,10 @@
 		raise_layer {
 			label = "Raise";
 			bindings = <
-	&kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp DEL
-	&trans    &trans   &trans &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
-	&trans    &trans   &trans &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
-	&trans    &trans   &trans &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
+	&kp GRAVE &kp EXCL  &kp AT    &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp DEL
+	&trans    &trans    &kp TILDE &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
+	&trans    &trans    &trans    &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
+	&trans    &trans    &trans    &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
 			>;
 
 		};
