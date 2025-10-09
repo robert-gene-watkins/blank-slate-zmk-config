@@ -22,7 +22,7 @@
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 &mt { tapping_term_ms = <175>; flavor = "tap-preferred"; };
-&caps_word { continue-list = <SEMI COMMA DOT FSLH S>; };
+&caps_word { continue-list = <SEMI COMMA DOT FSLH S LALT>; };
 
 #define BT(n) BT_SEL n
 
@@ -95,7 +95,7 @@
 			label = "Raise";
 			bindings = <
 	&kp GRAVE &kp EXCL  &kp AT    &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp DEL
-	&trans    &trans    &kp TILDE &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
+	&trans    &trans    &kp TILDE &kp LBRC &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
 	&trans    &trans    &trans    &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
 	&trans    &trans    &trans    &trans   &trans   &trans    &trans    &trans   &trans    &trans   &trans   &trans
 			>;
