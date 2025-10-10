@@ -81,6 +81,12 @@
 			bindings
 				= <&macro_press &kp CAPS>,<&macro_release &kp CAPS>,<&macro_press &kp KP_NLCK>,<&macro_release &kp KP_NLCK>,<&macro_press &kp CAPS>,<&macro_release &kp CAPS>,<&macro_press &kp KP_NLCK>,<&macro_release &kp KP_NLCK>;
 		};
+		mrng: mouse_range {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings
+				= <&macro_press &kp LSHFT>,<&mkp MB1>,<&macro_release &kp LSHFT>;
+		};
     };
 
     /*
@@ -153,7 +159,7 @@
 		mouse_layer {
 			label = "Mouse";
 			bindings = <
-	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans &mrng &trans &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans &trans &trans &mscrl &trans &trans &trans &trans &trans &trans &trans &trans
 	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
