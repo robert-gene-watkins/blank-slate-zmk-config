@@ -95,6 +95,7 @@
 				<&macro_press &kp LCTRL>,
 				<&macro_wait_time 30>,
 				<&macro_press &kp LCLK>,
+				<&macro_wait_time 30>,
 				<&macro_release &kp LCLK>,
 				<&macro_wait_time 30>,
 				<&macro_release &kp LCTRL>;
