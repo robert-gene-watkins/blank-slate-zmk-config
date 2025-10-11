@@ -23,7 +23,7 @@
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 &mt { tapping_term_ms = <175>; flavor = "tap-preferred"; };
-&caps_word { continue-list = <SEMI COMMA DOT FSLH S LALT>; };
+&caps_word { continue-list = <SEMI COMMA DOT FSLH LALT>; };
 
 #define BT(n) BT_SEL n
 
@@ -86,13 +86,13 @@
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
-				= <&macro_press &kp LSHFT>,<&macro_wait_time 30>,<&mkp MB1>,<&macro_wait_time 30>,<&macro_release &kp LSHFT>;
+				= <&macro_press &kp LSHFT>,<&macro_wait_time 30>,<&mkp LCLK>,<&macro_wait_time 30>,<&macro_release &kp LSHFT>;
 		};
 		mitm: mouse_item {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
-				= <&macro_press &kp LCTRL>,<&macro_wait_time 30>,<&mkp MB1>,<&macro_wait_time 30>,<&macro_release &kp LCTRL>;
+				= <&macro_press &kp LCTRL>,<&macro_wait_time 30>,<&mkp LCLK>,<&macro_wait_time 30>,<&macro_release &kp LCTRL>;
 		};
     };
 
@@ -113,10 +113,10 @@
         base_layer {
             label = "QWERTY Base";
             bindings = <
- &kp TAB    &kp Q       &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp BKSP
- &mo RSE_L  &lt_rep MSE_L A &mt_rep LALT S &mt_rep LSHFT D &mt_rep LCTRL F    &kp G          &kp H            &mt_rep RCTRL J    &mt_rep RSHFT K &mt_rep RALT L &mt_rep LWIN SEMI &lt_rep RSE_L QUOT
- &mo LWR_L  &kp Z       &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &lt_rep LWR_L RET
- &mo FUN_L  &kp ESC     &trans     &kp GRAVE   &kp BSLH       &kp SPACE      &kp SPACE        &kp LBKT       &kp LEFT    &kp DOWN   &kp UP        &kp RIGHT
+ &kp TAB    &kp Q           &kp W          &kp E           &kp R           &kp T     &kp Y     &kp U           &kp I           &kp O           &kp P             &kp BKSP
+ &mo RSE_L  &lt_rep MSE_L A &mt_rep LALT S &mt_rep LSHFT D &mt_rep LCTRL F &kp G     &kp H     &mt_rep RCTRL J &mt_rep RSHFT K &mt_rep RALT L  &mt_rep LWIN SEMI &lt_rep RSE_L QUOT
+ &mo LWR_L  &kp Z           &kp X          &kp C           &kp V           &kp B     &kp N     &kp M           &kp COMMA       &kp DOT         &kp FSLH          &lt_rep LWR_L RET
+ &mo FUN_L  &kp ESC         &trans         &kp GRAVE       &kp BSLH        &kp SPACE &kp SPACE &kp LBKT        &kp LEFT        &kp DOWN        &kp UP            &kp RIGHT
             >;
         };
 
