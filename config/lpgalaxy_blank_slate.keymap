@@ -96,9 +96,9 @@
 				<&macro_press &kp A>,
 				<&macro_press &kp B>,
 				<&macro_press &kp C>,
-				<&macro_release &kp C>,
+				<&macro_release &kp A>,
 				<&macro_release &kp B>,
-				<&macro_release &kp A>;
+				<&macro_release &kp C>;
 		};
 		mitm: mouse_item {
 			compatible = "zmk,behavior-macro";
@@ -106,7 +106,7 @@
 			bindings =
 				<&macro_wait_time 30>,
 				<&macro_press &kp LCTRL>,
-				<&macro_tap &kp LCLK>,
+				<&mkp LCLK>,
 				<&macro_release &kp LCTRL>;
 		};
     };
