@@ -96,7 +96,7 @@
 				<&macro_press &kp A>,
 				<&macro_press &kp B>,
 				<&macro_press &kp C>,
-				<&macro_release &kb C>,
+				<&macro_release &kp C>,
 				<&macro_release &kp B>,
 				<&macro_release &kp A>;
 		};
