@@ -82,11 +82,23 @@
 			bindings
 				= <&macro_press &kp CAPS>,<&macro_release &kp CAPS>,<&macro_press &kp KP_NLCK>,<&macro_release &kp KP_NLCK>,<&macro_press &kp CAPS>,<&macro_release &kp CAPS>,<&macro_press &kp KP_NLCK>,<&macro_release &kp KP_NLCK>;
 		};
-		mrng: mouse_range {
+		mrnga: mouse_range {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
 				= <&macro_press &kp LSHFT>,<&macro_wait_time 30>,<&macro_wait_time 30>,<&macro_release &kp LSHFT>;
+		};
+		mrng: mouse_range {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings =
+				<&macro_wait_time 30>,
+				<&macro_press &kp A>,
+				<&macro_press &kp B>,
+				<&macro_press &kp C>,
+				<&macro_release &kb C>,
+				<&macro_release &bk B>,
+				<&macro_release &bk A>;
 		};
 		mitm: mouse_item {
 			compatible = "zmk,behavior-macro";
@@ -94,8 +106,7 @@
 			bindings =
 				<&macro_wait_time 30>,
 				<&macro_press &kp LCTRL>,
-				<&macro_press &kp LCLK>,
-				<&macro_release &kp LCLK>,
+				<&macro_tap &kp LCLK>,
 				<&macro_release &kp LCTRL>;
 		};
     };
