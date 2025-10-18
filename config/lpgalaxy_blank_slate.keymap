@@ -88,7 +88,7 @@
 		compatible = "zmk,combos";
 		caps_word_combo {
 			bindings = <&rw_caps CAP_L>;
-			key-positions = <1 2>;
+			key-positions = <15 20>;
 		};
 	};
 
