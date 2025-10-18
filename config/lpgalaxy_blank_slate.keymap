@@ -48,7 +48,7 @@
 		rw_caps: rw_caps {
 			compatible = "zmk,behavior-auto-layer";
 			#binding-cells = <1>;
-			continue-list = <SEMI>;
+			continue-list = <SEMI,COMMA,DOT,FSLH>;
 			ignore-alphas;
 		};
         // Mod-tap with tap-preferred behavior and quick-tap settings that enable repeat
@@ -168,10 +168,10 @@
 		cap_layer {
 			label = "Caps";
 			bindings = <
-	&trans &kp LS(Q) &kp LS(W) &kp LS(E) &kp LS(R) &trans &trans &trans &trans &trans &trans &trans
-	&trans &kp LS(A) &kp LS(S) &kp LS(D) &kp LS(F) &trans &trans &trans &trans &trans &trans &trans
-	&trans &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &trans &trans &trans &trans &trans &trans &trans
-	&trans &trans    &trans    &trans    &trans    &trans &trans &trans &trans &trans &trans &trans
+	&trans &kp LS(Q) &kp LS(W) &kp LS(E) &kp LS(R) &kp LS(T) &kp LS(Y) &kp LS(U) &kp LS(I)     &kp LS(O)   &kp LS(P)      &trans
+	&trans &kp LS(A) &kp LS(S) &kp LS(D) &kp LS(F) &kp LS(G) &kp LS(H) &kp LS(J) &kp LS(K)     &kp LS(L)   &kp LS(SEMI)   &trans
+	&trans &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B) &kp LS(N) &kp LS(M) &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLH)   &trans
+	&trans &trans    &trans    &trans    &trans    &trans    &trans    &trans    &trans        &trans      &trans         &trans
 			>;
 		};
 
