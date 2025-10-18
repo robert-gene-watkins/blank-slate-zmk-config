@@ -48,7 +48,7 @@
 		rw_caps: rw_caps {
 			compatible = "zmk,behavior-auto-layer";
 			#binding-cells = <1>;
-			continue-list = <SEMI,COMMA,DOT,FSLH>;
+			continue-list = <SEMI COMMA DOT FSLH>;
 			ignore-alphas;
 		};
         // Mod-tap with tap-preferred behavior and quick-tap settings that enable repeat
