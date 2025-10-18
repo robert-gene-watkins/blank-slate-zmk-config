@@ -24,7 +24,7 @@
 &lt { quick_tap_ms = <200>; };
 &mt { tapping_term_ms = <175>; flavor = "tap-preferred"; };
 &caps_word {
-	shift-list = <SEMI>
+	shift-list = <SEMI>;
 	continue-list = <SEMI COMMA DOT FSLH LALT>;
 };
 
