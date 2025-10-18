@@ -14,11 +14,12 @@
 
 #define TBLE_ORTHO   1
 
-#define FUN_L 1
-#define RSE_L 2
-#define LWR_L 3
-#define ADJ_L 4
-#define MSE_L 5
+#define CAP_L 1
+#define FUN_L 2
+#define RSE_L 3
+#define LWR_L 4
+#define ADJ_L 5
+#define MSE_L 6
 
 #define D_GRV
 #define D_S_Q &dbl Q Q 
@@ -44,6 +45,12 @@
     };
 
     behaviors {
+		rw_caps: rw_caps {
+			compatible = "zmk,behavior-auto-layer";
+			#binding-cells = <1>;
+			continue-list = <SEMI>;
+			ignore-modifiers;
+		};
         // Mod-tap with tap-preferred behavior and quick-tap settings that enable repeat
         mt_rep: mt_repeat {
             compatible = "zmk,behavior-hold-tap";
@@ -72,15 +79,15 @@
 	conditional_layers {
 		compatible = "zmk,conditional-layers";
 		tri_layer {
-			if-layers = <2 3>;
-			then-layer = <4>;
+			if-layers = <RSE_L LWR_L>;
+			then-layer = <ADJ_L>;
 		};
 	};
 
 	combos {
 		compatible = "zmk,combos";
 		caps_word_combo {
-			bindings = <&caps_word>;
+			bindings = <&rw_caps CAP_L>;
 			key-positions = <1 2>;
 		};
 	};
@@ -158,6 +165,16 @@
             >;
         };
 
+		cap_layer {
+			label = "Caps";
+			bindings = <
+	&trans &kp LS(Q) &kp LS(W) &kp LS(E) &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans    &trans    &trans    &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans    &trans    &trans    &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans    &trans    &trans    &trans &trans &trans &trans &trans &trans &trans &trans
+			>;
+		};
+
 		func_layer {
 			label = "Func";
 			bindings = <
@@ -172,8 +189,8 @@
 			label = "Raise";
 			bindings = <
 	&trans    &kp EXCL &kp AT    &kp HASH &kp DLLR  &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp DEL
-	&trans    D_GRV    &kp TILDE &kp LBRC &kp UNDER &kp MINUS &kp EQUAL &kp PLUS &trans    &trans   &trans   &trans
-	&trans    D_S_Q    D_D_Q     D_PAREN  D_BRC     D_BKT     D_ANG     &trans   &trans    &trans   &trans   &trans
+	&trans    D_GRV    D_ANG     &kp LBRC &kp UNDER &kp MINUS &kp EQUAL &kp PLUS &trans    &trans   &trans   &trans
+	&trans    D_S_Q    D_D_Q     D_PAREN  D_BRC     D_BKT     &trans    &trans   &trans    &trans   &trans   &trans
 	&trans    &trans   &trans    &trans   &trans    &trans    &trans    &trans   &trans    &trans   &trans   &trans
 			>;
 
@@ -212,6 +229,12 @@
 
 		};
 /*
+
+	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
         nav_layer {
             label = "Nav";
             bindings = <
