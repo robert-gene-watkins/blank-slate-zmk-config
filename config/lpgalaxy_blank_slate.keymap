@@ -23,7 +23,10 @@
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 &mt { tapping_term_ms = <175>; flavor = "tap-preferred"; };
-&caps_word { continue-list = <SEMI COMMA DOT FSLH LALT>; };
+&caps_word {
+	shift-list = <SEMI>
+	continue-list = <SEMI COMMA DOT FSLH LALT>;
+};
 
 #define BT(n) BT_SEL n
 
@@ -76,6 +79,15 @@
 	};
 
     macros {
+		dbl: double_chr {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <2>;
+			bindings =
+				<&macro_param_1to1>,
+				<&macro_press &kp MACRO_PLACEHOLDER>,
+				<&macro_param_2to1>,
+				<&macro_press &kp MACRO_PLACEHOLDER>;
+		};
 		mscrl: mscrl {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -153,10 +165,10 @@
 		raise_layer {
 			label = "Raise";
 			bindings = <
-	&trans    &kp EXCL  &kp AT    &kp HASH &kp DLLR  &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp DEL
-	&trans    &trans    &kp TILDE &kp LBRC &kp UNDER &kp MINUS &kp EQUAL &kp PLUS &trans    &trans   &trans   &trans
-	&trans    &trans    &trans    &trans   &trans    &trans    &trans    &trans   &trans    &trans   &trans   &trans
-	&trans    &trans    &trans    &trans   &trans    &trans    &trans    &trans   &trans    &trans   &trans   &trans
+	&trans    &kp EXCL         &kp AT    &kp HASH &kp DLLR  &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp DEL
+	&trans    &dbl GRAVE GRAVE &kp TILDE &kp LBRC &kp UNDER &kp MINUS &kp EQUAL &kp PLUS &trans    &trans   &trans   &trans
+	&trans    &trans           &trans    &trans   &trans    &trans    &trans    &trans   &trans    &trans   &trans   &trans
+	&trans    &trans           &trans    &trans   &trans    &trans    &trans    &trans   &trans    &trans   &trans   &trans
 			>;
 
 		};
