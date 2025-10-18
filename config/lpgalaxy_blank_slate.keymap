@@ -56,8 +56,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
             hold-trigger-on-release;
             hold-trigger-key-positions = <1 2 3 6 7 8 31 0 9>;
@@ -69,8 +69,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };
