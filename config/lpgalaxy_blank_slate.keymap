@@ -20,6 +20,14 @@
 #define ADJ_L 4
 #define MSE_L 5
 
+#define D_GRV
+#define D_S_Q &dbl Q Q 
+#define D_D_Q &dbl LS(Q) LS(Q)
+#define D_PAREN &dbl LPAR RPAR
+#define D_BRC &dbl UNDER PLUS
+#define D_BKT &dbl MINUS EQUAL
+#define D_ANG &dbl LS(W) LS(E) 
+
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 &mt { tapping_term_ms = <175>; flavor = "tap-preferred"; };
@@ -163,10 +171,10 @@
 		raise_layer {
 			label = "Raise";
 			bindings = <
-	&trans    &kp EXCL         &kp AT           &kp HASH       &kp DLLR        &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp DEL
-	&trans    &dbl GRAVE GRAVE &kp TILDE        &kp LBRC       &kp UNDER       &kp MINUS &kp EQUAL &kp PLUS &trans    &trans   &trans   &trans
-	&trans    &dbl Q Q         &dbl LS(Q) LS(Q) &dbl LPAR RPAR &dbl UNDER PLUS &trans    &trans    &trans   &trans    &trans   &trans   &trans
-	&trans    &trans           &trans           &trans         &trans          &trans    &trans    &trans   &trans    &trans   &trans   &trans
+	&trans    &kp EXCL &kp AT    &kp HASH &kp DLLR  &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp DEL
+	&trans    D_GRV    &kp TILDE &kp LBRC &kp UNDER &kp MINUS &kp EQUAL &kp PLUS &trans    &trans   &trans   &trans
+	&trans    D_S_Q    D_D_Q     D_PAREN  D_BRC     D_BKT     D_ANG     &trans   &trans    &trans   &trans   &trans
+	&trans    &trans   &trans    &trans   &trans    &trans    &trans    &trans   &trans    &trans   &trans   &trans
 			>;
 
 		};
