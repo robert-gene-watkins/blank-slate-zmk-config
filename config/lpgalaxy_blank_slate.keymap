@@ -194,7 +194,7 @@
 			label = "Raise";
 			bindings = <
 	&trans    &kp EXCL &kp AT    &kp HASH &kp DLLR  &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR  &kp RPAR  &kp DEL
-	&trans    D_GRV    D_ANG     &trans   V_LBRC    V_LBKT    &V_RBKT   V_RBRC   &trans    &trans    &trans    &trans
+	&trans    D_GRV    D_ANG     &trans   V_LBRC    V_LBKT    V_RBKT    V_RBRC   &trans    &trans    &trans    &trans
 	&trans    D_S_Q    D_D_Q     D_PAREN  D_BRC     D_BKT     &trans    &trans   &trans    &trans    &trans    &trans
 	&trans    &trans   &trans    &trans   &trans    &trans    &trans    &trans   &kp HOME  &kp PG_DN &kp PG_UP &kp END
 			>;
