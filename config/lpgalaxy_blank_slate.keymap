@@ -21,13 +21,13 @@
 #define ADJ_L 5
 #define MSE_L 6
 
-#define D_GRV
-#define D_S_Q &dbl Q Q 
+#define D_GRV &dbl GRAVE GRAVE
+#define D_S_Q &dbl Q Q
 #define D_D_Q &dbl LS(Q) LS(Q)
 #define D_PAREN &dbl LPAR RPAR
 #define D_BRC &dbl UNDER PLUS
 #define D_BKT &dbl MINUS EQUAL
-#define D_ANG &dbl LS(W) LS(E) 
+#define D_ANG &dbl LS(W) LS(E)
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
