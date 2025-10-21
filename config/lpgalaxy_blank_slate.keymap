@@ -166,7 +166,7 @@
  &kp TAB    &kp Q           &kp W          &kp E           &kp R           &kp T     &kp Y     &kp U           &kp I           &kp O           &kp P             &kp BKSP
  &mo RSE_L  &lt_rep MSE_L A &mt_rep LALT S &mt_rep LSHFT D &mt_rep LCTRL F &kp G     &kp H     &mt_rep RCTRL J &mt_rep RSHFT K &mt_rep RALT L  &mt_rep LWIN SEMI &lt_rep RSE_L SQT
  &mo LWR_L  &kp Z           &kp X          &kp C           &kp V           &kp B     &kp N     &kp M           &kp COMMA       &kp DOT         &kp FSLH          &lt_rep LWR_L RET
- &mo FUN_L  &kp ESC         &trans         &kp GRAVE       &kp LBKT        &kp SPACE &kp SPACE &kp BSLH        &kp LEFT        &kp DOWN        &kp UP            &kp RIGHT
+ &mo FUN_L  &kp ESC         &key_repeat    &kp GRAVE       &kp LBKT        &kp SPACE &kp SPACE &kp BSLH        &kp LEFT        &kp DOWN        &kp UP            &kp RIGHT
             >;
         };
 
