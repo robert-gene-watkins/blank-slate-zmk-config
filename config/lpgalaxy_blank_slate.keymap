@@ -50,10 +50,16 @@
     };
 
 	soft_off_waker: soft_off_waker {
-		compatible = "zmk,gpio-key-wakeup-trigger";
-		wakeup-source;
-		gpios = <&gpio0 3 GPIO_ACTIVE_LOW>,
-				<&gpio0 4 GPIO_ACTIVE_LOW>;
+    	compatible = "zmk,gpio-key-wakeup-trigger";
+    	wakeup-source;
+    	trigger = <&gksp>;
+	};
+
+	gksp: gpio_keys {
+    	compatible = "gpio-keys";
+    	wakeup_key: wakeup_key {
+        	gpios = <&gpio0 3 GPIO_ACTIVE_LOW>, <&gpio0 4 GPIO_ACTIVE_LOW>;
+    	};
 	};
 
 	kscan0: kscan {
