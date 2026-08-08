@@ -57,7 +57,7 @@
 
 	gksp: gpio_keys {
     	compatible = "gpio-keys";
-    	wakeup_key: wakeup_key {
+    	wakeup_key_gpio: wakeup_key {
         	gpios = <&gpio0 3 GPIO_ACTIVE_LOW>, <&gpio0 4 GPIO_ACTIVE_LOW>;
     	};
 	};
