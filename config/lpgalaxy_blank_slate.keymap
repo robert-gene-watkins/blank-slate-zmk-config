@@ -146,10 +146,11 @@
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings =
-				<&macro_wait_time 20>,
-				<&macro_press &kp LSHFT>,
-				<&macro_press &mkp MB1>,
-				<&macro_release &kp LSHFT>;
+    			<&macro_wait_time 20>,
+    			<&macro_press &kp LSHFT>,
+    			<&macro_press &mkp MB1>,
+    			<&macro_release &mkp MB1>,
+    			<&macro_release &kp LSHFT>;
 		};
 		mitm: mouse_item {
 			compatible = "zmk,behavior-macro";
