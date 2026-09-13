@@ -87,6 +87,7 @@
 			if-layers = <RSE_L LWR_L>;
 			then-layer = <ADJ_L>;
 		};
+	};
 
 	combos {
 		compatible = "zmk,combos";
