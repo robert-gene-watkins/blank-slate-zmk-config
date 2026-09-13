@@ -49,6 +49,7 @@
                        &layout_ortho_4x12_all1u;
     };
 
+
 	soft_off_waker: soft_off_waker {
     	compatible = "zmk,gpio-key-wakeup-trigger";
     	wakeup-source;
@@ -105,7 +106,6 @@
 			if-layers = <RSE_L LWR_L>;
 			then-layer = <ADJ_L>;
 		};
-	};
 
 	combos {
 		compatible = "zmk,combos";
@@ -113,6 +113,11 @@
 			bindings = <&rw_caps CAP_L>;
 			key-positions = <15 20>;
 		};
+        combo_wake_up {
+            timeout-ms = <50>;
+            key-positions = <0 11>; // Change to your preferred top-left + top-right key positions
+            bindings = <&soft_off_waker>;
+        };
 	};
 
     macros {
