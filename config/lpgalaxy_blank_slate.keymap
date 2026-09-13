@@ -49,25 +49,6 @@
                        &layout_ortho_4x12_all1u;
     };
 
-
-	soft_off_waker: soft_off_waker {
-    	compatible = "zmk,gpio-key-wakeup-trigger";
-    	wakeup-source;
-    	trigger = <&gksp>;
-	};
-
-	gksp: gpio_keys {
-    	compatible = "gpio-keys";
-    	wakeup_key_gpio: wakeup_key {
-        	gpios = <&gpio0 3 GPIO_ACTIVE_LOW>, <&gpio0 4 GPIO_ACTIVE_LOW>;
-    	};
-	};
-
-	kscan0: kscan {
-		compatible = "zmk,kscan-gpio-matrix";
-		wakeup-source;
-	};
-
     behaviors {
 		rw_caps: rw_caps {
 			compatible = "zmk,behavior-auto-layer";
@@ -109,10 +90,12 @@
 
 	combos {
 		compatible = "zmk,combos";
+
 		caps_word_combo {
 			bindings = <&rw_caps CAP_L>;
 			key-positions = <15 20>;
 		};
+
         combo_wake_up {
             timeout-ms = <50>;
             key-positions = <0 11>; // Change to your preferred top-left + top-right key positions
