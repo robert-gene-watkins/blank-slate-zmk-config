@@ -89,6 +89,11 @@
 		};
 	};
 
+    soft_off_waker: soft_off_waker {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&kscan0>; // Directs the hardware to watch the key matrix
+    };
+
 	combos {
 		compatible = "zmk,combos";
 
