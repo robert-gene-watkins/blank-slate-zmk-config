@@ -92,6 +92,7 @@
     soft_off_waker: soft_off_waker {
         compatible = "zmk,soft-off-wakeup-sources";
         wakeup-sources = <&kscan>; // Try plain '&kscan' or '&kscan0' without the path wrapper
+        #binding-cells = <0>; // Tells the compiler this behavior takes 0 arguments
     };
 
 	combos {
